@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin-top: 15px;
+}
+
+ul > li {
+  padding: 10px 20px;
+  border: solid black 1px;
+}
+
+li:hover {
+  border: solid red 1px;
+}
+
+li:active {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* Cant focus if tabindex used */
+li:focus {
+  background-color: green;
+  outline: none;
+}
+
+li:nth-child(odd) {
+  color: grey;
+}
+
+li::before {
+  content: ">>";
+}
+
+@media screen and (max-width: 700px) {
+  ul {
+    flex-direction: column;
+  }
+}
+
+/* Apply flexbox with flex-direction:row to the ul
+Apply ‘padding: 10px 20px’ and ‘border:1px solid black’ to each li inside of the ul
+Hovering over a list item applies ‘border: 1px solid red’
+The active list item changes font to “Lucida Sans”
+The focused list item has a background color of green (By default, list items can’t be focused, you’ll have to find out how to make them focusable)
+The text color of odd list items is Grey
+Place “>>” before each list item
+When the viewport is under 700px, change the flex-direction of the ul to column */
